@@ -1,32 +1,62 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Header />
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Header from '@/components/Header.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Header
   }
 }
+</script>
+
+<style lang="scss">
+  @font-face {
+    font-family: "Helvetica";
+    src: local("Helvetica"),
+    url(assets/Helvetica.ttf) format("truetype");
+  }
+  body {
+    margin:0;
+    padding: 0;
+    background-image: url("assets/bg.jpg");
+    width:100%;
+    min-height: 100vh;
+    font-family: Helvetica;
+    overflow: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .glide {
+    padding: 0 20px 0 35px;
+    position: relative;
+    .glide__slides {
+      padding: 20px 0;
+      margin: 0;
+    }
+    .glide__slide {
+      margin: 0 10px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    div[data-glide-el='controls'] {
+      position: absolute;
+      right: 50px;
+      top: 40%;
+      z-index: 10;
+      .books_slider__arrow {
+        cursor: pointer;
+      }
+    }
+  }
+
 </style>
