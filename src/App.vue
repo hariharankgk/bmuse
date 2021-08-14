@@ -42,7 +42,6 @@ export default {
       margin: 0;
     }
     .glide__slide {
-      margin: 0 10px;
       cursor: pointer;
       &:hover {
         transform: scale(1.05);
