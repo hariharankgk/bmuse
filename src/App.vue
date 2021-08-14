@@ -46,6 +46,7 @@ export default {
       cursor: pointer;
       &:hover {
         transform: scale(1.05);
+        margin: 0 10px;
       }
     }
     div[data-glide-el='controls'] {
